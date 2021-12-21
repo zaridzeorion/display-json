@@ -1,0 +1,35 @@
+.posts__list {
+  border-radius: 2px;
+  margin: 3em 10em;
+  padding: 2em 1.5em;
+  transition: 0.2s;
+  opacity: 0.9;
+}
+
+.posts__list:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .posts__list {
+    margin: 2em;
+  }
+}
+
+.posts__list:not(:first-child) {
+  margin-top: 3em;
+}
+
+.post__title {
+  font-size: 0.95em;
+  margin-bottom: 0.75em;
+}
+
+.post__body {
+  font-size: 0.9em;
+}
+
+.post__author {
+  text-decoration: underline;
+}
+

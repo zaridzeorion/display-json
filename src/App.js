@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./components/Home.js";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import Footer from "./components/Footer";
+import "./styles/main.css";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const handleThemeChange = () => setIsDarkMode(!isDarkMode);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <div className="App">
+        <div
+          onClick={() => handleThemeChange()}
+          title="Change theme"
+          className="theme-button"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          C
+        </div>
+
+        <Header />
+
+        <Switch>
+          <Route exact path="/">
+            <Home darkMode={isDarkMode} />
+          </Route>
+
+          <Route path="/sign-in">
+            <SignIn />
+          </Route>
+
+          <Route path="/sign-up">
+            <SignUp />
+          </Route>
+        </Switch>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
