@@ -14,15 +14,8 @@ const Header = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/sign-in">Sign in</Link>
-          </li>
         </ul>
       </nav>
-
-      <Link className="cta" to="/sign-up">
-        <button>Sign up</button>
-      </Link>
     </header>
   );
 };

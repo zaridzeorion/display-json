@@ -17,7 +17,7 @@ body {
 .theme-button {
   background-color: var(--light-color);
   border-radius: 50%;
-  margin: 2.15em 1em;
+  margin: 1.5em 1.25em;
   position: absolute;
   width: 2em;
   height: 2em;
